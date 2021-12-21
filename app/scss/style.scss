@@ -170,12 +170,113 @@
       background-color: $accent;
     }
   }
-  p {
+  &__subtitle {
     @extend %pt-400;
     font-size: 16px;
     line-height: 2;
     letter-spacing: 0.02em;
     margin-bottom: 34px;
+  }
+}
+
+//----------- about -----------
+
+.about {
+  padding: 129px 0 127px;
+  &__title {
+    margin-bottom: 19px;
+  }
+  &__subtitle {
+    margin-bottom: 63px;
+  }
+  &__content {
+    margin-top: -84px;
+    padding-top: 86px;
+    min-height: 586px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__descr {
+    max-width: 597px;
+    padding: 45px 88px 35px;
+    background-color: rgba(#1d1816, 0.8);
+    text-align: center;
+    color: $light;
+    p {
+      margin-bottom: 27px;
+    }
+  }
+  &__link {
+    color: #929090;
+  }
+}
+
+//----------- benefits -----------
+
+.benefits {
+  padding: 130px 0 140px;
+  background-color: #2d2926;
+  color: $light;
+  &__subtitle {
+    margin-bottom: 120px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 330px);
+    justify-content: space-between;
+    row-gap: 91px;
+  }
+  &__item {
+    max-width: 320px;
+    padding: 12px 0 0 118px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-repeat: no-repeat;
+    }
+    &--best::before {
+      background-image: url("../images/icons/best.png");
+      width: 90px;
+      height: 88px;
+    }
+    &--affordability::before {
+      background-image: url("../images/icons/affordability.png");
+      width: 91px;
+      height: 90px;
+    }
+    &--time::before {
+      background-image: url("../images/icons/time.png");
+      width: 55px;
+      height: 90px;
+      left: 31px;
+    }
+    &--details::before {
+      background-image: url("../images/icons/details.png");
+      width: 91px;
+      height: 92px;
+    }
+    &--quality::before {
+      background-image: url("../images/icons/quality.png");
+      width: 95px;
+      height: 80px;
+    }
+    &--love::before {
+      background-image: url("../images/icons/love.png");
+      width: 96px;
+      height: 87px;
+    }
+  }
+  &__name {
+    @extend %pt-700;
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 10px;
   }
 }
 

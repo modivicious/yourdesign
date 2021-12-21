@@ -10,6 +10,9 @@ body {
   @extend %mont-400;
   font-size: 12px;
   line-height: 1.8;
+  p {
+    letter-spacing: 0.04em;
+  }
 }
 
 .main {
@@ -49,4 +52,54 @@ body {
   text-transform: uppercase;
   text-align: center;
   padding: 25px 5px;
+}
+
+.title {
+  @extend %oran;
+  font-size: 85px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 12px;
+  span {
+    padding: 0 205px;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 165px;
+      height: 2px;
+      background-color: $accent;
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.subtitle {
+  @extend %pt-400;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  max-width: 615px;
+  margin: 0 auto;
+}
+
+.section-link {
+  line-height: 1;
+  padding-bottom: 2px;
+  border-bottom: 1px solid;
+  letter-spacing: 0.04em;
+}
+
+.link-box {
+  display: flex;
+  justify-content: center;
 }
