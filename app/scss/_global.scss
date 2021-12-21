@@ -1,0 +1,52 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  @extend %mont-400;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: 1430px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.link-btn {
+  display: inline-block;
+  min-width: 322px;
+  border-radius: 7px;
+  background-color: #d77d49;
+  @extend %mont-700;
+  font-size: 14px;
+  line-height: 1;
+  color: $light;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 25px 5px;
+}
