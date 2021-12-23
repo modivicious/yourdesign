@@ -51,18 +51,30 @@ body {
   color: $light;
   text-transform: uppercase;
   text-align: center;
-  padding: 25px 5px;
+  padding: 26px 5px 25px;
+  box-shadow: 0 15px 25px rgba(#000, 0.15);
+  transition: all 0.3s;
+  &:focus-visible,
+  &:active {
+    background-color: #fff;
+    color: $accent;
+    box-shadow: none;
+  }
+  &:hover {
+    box-shadow: none;
+  }
 }
 
 .title {
   @extend %oran;
   font-size: 85px;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
   text-align: center;
   margin-bottom: 12px;
   span {
+    display: inline-block;
     padding: 0 205px;
+    max-width: 1184px;
     position: relative;
     &::before,
     &::after {
@@ -97,6 +109,10 @@ body {
   padding-bottom: 2px;
   border-bottom: 1px solid;
   letter-spacing: 0.04em;
+  transition: all 0.15s;
+  &:hover {
+    border-color: transparent;
+  }
 }
 
 .link-box {
@@ -104,25 +120,27 @@ body {
   justify-content: center;
 }
 
-.img-box {
-  position: relative;
-  z-index: 100;
+.swiper-button-prev,
+.swiper-button-next {
+  margin: 0;
+  transform: translateY(-50%);
+  background: none;
+  width: auto;
+  height: auto;
+  svg {
+    transition: all 0.25s;
+  }
+  &:hover {
+    svg {
+      opacity: 1;
+    }
+  }
 }
-
-.link-focus {
-  &:focus-visible {
-    outline: none;
-  }
-  &:focus-visible::before {
-    outline: 2px solid #000;
-    outline-offset: -2px;
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
+.swiper-button-prev {
+  left: 0;
+  padding: 30px 30px 30px 0;
+}
+.swiper-button-next {
+  right: 0;
+  padding: 30px 0 30px 30px;
 }

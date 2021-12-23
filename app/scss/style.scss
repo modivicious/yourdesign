@@ -287,6 +287,21 @@
   &__subtitle {
     margin-bottom: 100px;
   }
+  &__box {
+    position: relative;
+  }
+  .swiper {
+    width: 100%;
+    height: 610px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .swiper-slide {
+    height: calc((100% - 30px) / 2);
+  }
+  .swiper-button-disabled {
+    display: none;
+  }
   &__item {
     position: relative;
     width: max-content;
@@ -422,30 +437,16 @@
   &__subtitle {
     margin-bottom: 95px;
   }
-  &__list {
-    .slick-list {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .slick-arrow {
-      position: absolute;
-      z-index: 70;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 40px 0;
-    }
-    .slick-prev {
-      left: 0;
-
-      padding-right: 70px;
-    }
-    .slick-next {
-      right: 0;
-      padding-left: 70px;
-    }
+  .swiper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
   }
   &__item {
     position: relative;
+    box-sizing: border-box;
   }
   &__img-box {
     width: max-content;
@@ -526,6 +527,94 @@
   }
   &::after {
     right: 0;
+  }
+}
+
+//----------- consult -----------
+
+.consult {
+  padding: 120px 0 168px;
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__subtitle {
+    margin-bottom: 130px;
+  }
+  &__form {
+    padding: 80px 100px;
+    box-shadow: 0px 0px 29px rgba(#2f2c2a, 0.18);
+  }
+  &__fieldset {
+    display: grid;
+    gap: 56px;
+    & > :last-child {
+      padding-top: 13px;
+    }
+  }
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__box {
+    max-width: 390px;
+    width: 100%;
+  }
+  &__label {
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+    color: #5c5c5c;
+    margin-bottom: 10px;
+  }
+  &__input,
+  &__text {
+    font-size: 18px;
+    line-height: 1;
+    background-color: #f4f4f4;
+    border-radius: 7px;
+    &::placeholder {
+      color: #a3a3a3;
+    }
+    &:focus-visible {
+      background-color: #fff;
+      box-shadow: 0 15px 25px rgba(#000, 0.15);
+    }
+  }
+  &__input {
+    padding: 20px 21px 24px;
+    width: 100%;
+    height: 65px;
+  }
+  &__text {
+    padding: 17px 21px;
+    width: 100%;
+    height: 167px;
+    resize: none;
+  }
+  &__btn {
+    width: 100%;
+  }
+}
+
+//----------- footer -----------
+
+.footer {
+  display: grid;
+  justify-items: center;
+  gap: 29px;
+  padding: 53px 0 33px;
+  background-color: #151211;
+  color: $light;
+  .socials__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+  .socials__item:not(:last-child) {
+    margin-right: 12px;
   }
 }
 

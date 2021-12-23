@@ -1,12 +1,25 @@
 $(function () {
-  $('.recent__list').slick({
-    rows: 2,
-    slidesPerRow: 3,
+  new Swiper(".recent__slider", {
+    autoHeight: false,
+    slidesPerView: 3,
+    slidesPerColumnFill: 'row',
+    slidesPerColumn: 2,
+    spaceBetween: 30,
+    setWrapperSize: true,
+    navigation: {
+      nextEl: ".recent__next",
+      prevEl: ".recent__prev",
+    },
   });
 
-  $('.reviews__list').slick({
-    fade: true,
-    prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style=""><svg width="35" height="60" opacity=".4" fill="#D77E4A"><use href="images/icons/sprite.svg#arrow-left"></use></svg></button >',
-    nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button" style=""><svg width="35" height="60" opacity=".4" fill="#D77E4A"><use href="images/icons/sprite.svg#arrow-right"></use></svg></button >',
+  new Swiper(".reviews__slider", {
+    slidesPerView: 1,
+    effect: 'fade',
+    simulateTouch: false,
+    loop: true,
+    navigation: {
+      nextEl: ".reviews__next",
+      prevEl: ".reviews__prev",
+    },
   });
 });
