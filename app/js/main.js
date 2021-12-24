@@ -2,10 +2,9 @@ $(function () {
   new Swiper(".recent__slider", {
     autoHeight: false,
     slidesPerView: 3,
-    slidesPerColumnFill: 'row',
     slidesPerColumn: 2,
     spaceBetween: 30,
-    setWrapperSize: true,
+    simulateTouch: false,
     navigation: {
       nextEl: ".recent__next",
       prevEl: ".recent__prev",
@@ -21,5 +20,9 @@ $(function () {
       nextEl: ".reviews__next",
       prevEl: ".reviews__prev",
     },
+  });
+
+  $('.search__btn').on('click', function () {
+    $('.search__input').animate({ width: 'toggle', paddingLeft: 'toggle', paddingRight: 'toggle' }, 400);
   });
 });
