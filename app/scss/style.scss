@@ -292,7 +292,7 @@
 
 .benefits {
   padding: 120px 0 155px;
-  background-color: #2d2926;
+  background-color: $dark;
   color: $light;
   &__subtitle {
     margin-bottom: 120px;
@@ -569,15 +569,15 @@
   }
   &__glass {
     position: absolute;
-    top: 56px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     max-width: 945px;
     width: 100%;
     min-height: 486px;
     padding: 44px 0;
     background-color: rgba(#bfb6af, 0.3);
-    border: 1px solid rgba(#2d2926, 0.6);
+    border: 1px solid rgba($dark, 0.6);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
