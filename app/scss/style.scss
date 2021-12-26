@@ -15,7 +15,6 @@
   right: 0;
   z-index: 1000;
   &__top {
-    padding: 5px 0;
     border-bottom: 2px solid #7b736e;
   }
   &__top-inner {
@@ -26,6 +25,7 @@
 
 .contacts {
   display: flex;
+  align-items: center;
   font-size: 16px;
   text-transform: uppercase;
   &__item {
@@ -52,8 +52,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: -10px;
   &__link {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
     svg {
       transition: all 0.15s;
     }
@@ -63,18 +68,61 @@
       }
     }
   }
-  &__item {
-    &:not(:last-child) {
-      margin-right: 27px;
-    }
-  }
 }
 
 .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 0;
+  padding: 24px 0;
+
+  &__btn {
+    display: none;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 200;
+    span {
+      width: 22px;
+      height: 3px;
+      background-color: rgba(255, 255, 255, 0.8);
+      transition: all 0.3s;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 3px;
+      background-color: rgba(255, 255, 255, 0.8);
+      transition: all 0.3s;
+    }
+    &::before {
+      top: 14px;
+    }
+    &::after {
+      bottom: 14px;
+    }
+  }
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(45, 45, 45, 0.45);
+    z-index: 140;
+    transition: 0.25s ease-in;
+    &.menu__overlay--active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
   &__content {
     display: flex;
     align-items: center;
@@ -83,17 +131,8 @@
     display: flex;
     font-size: 16px;
     text-transform: uppercase;
+    letter-spacing: 0.04em;
     padding-right: 50px;
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 1px;
-      height: 34px;
-      background-color: #fff;
-    }
   }
   &__item {
     &:not(:last-child) {
@@ -120,14 +159,23 @@
 }
 
 .search {
-  margin-left: 50px;
+  padding-left: 50px;
   display: flex;
   align-items: center;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 1px;
+    height: 34px;
+    background-color: $light;
+  }
   &__input {
     display: none;
     width: 175px;
     font-size: 14px;
-    line-height: 1;
     background-color: transparent;
     color: #e9dbcf;
     border-bottom: 2px solid #bfbebd;
@@ -179,12 +227,9 @@
     position: relative;
     color: $light;
   }
-  &__content {
-  }
   &__title {
     @extend %oran;
     font-size: 100px;
-    line-height: 1;
     letter-spacing: -0.02em;
     padding-top: 48px;
     margin-bottom: 30px;
@@ -211,9 +256,9 @@
 //----------- about -----------
 
 .about {
-  padding: 129px 0 127px;
+  padding: 120px 0 125px;
   &__title {
-    margin-bottom: 19px;
+    margin-bottom: 14px;
   }
   &__subtitle {
     margin-bottom: 63px;
@@ -246,7 +291,7 @@
 //----------- benefits -----------
 
 .benefits {
-  padding: 130px 0 140px;
+  padding: 120px 0 155px;
   background-color: #2d2926;
   color: $light;
   &__subtitle {
@@ -304,7 +349,6 @@
   &__name {
     @extend %pt-700;
     font-size: 16px;
-    line-height: 1;
     margin-bottom: 10px;
   }
 }
@@ -312,7 +356,7 @@
 //----------- recent -----------
 
 .recent {
-  padding: 130px 0 145px;
+  padding: 116px 0 144px;
   &__subtitle {
     margin-bottom: 100px;
   }
@@ -331,9 +375,10 @@
   .swiper-button-disabled {
     display: none;
   }
-  &__item {
+  &__inner {
     position: relative;
-    width: max-content;
+    width: fit-content;
+    margin: 0 auto;
     &:hover {
       .recent__content {
         opacity: 1;
@@ -363,19 +408,22 @@
   }
   &__descr {
     max-width: 185px;
+    p {
+      letter-spacing: 0.1em;
+    }
   }
   &__name {
     @extend %pt-700;
     font-size: 30px;
-    line-height: 1;
-    margin-bottom: 19px;
+    line-height: 1.2;
+    margin-bottom: 9px;
   }
 }
 
 //----------- stages -----------
 
 .stages {
-  padding: 135px 0 145px;
+  padding: 125px 0 145px;
   background-repeat: no-repeat;
   background-size: cover;
   color: $light;
@@ -392,13 +440,13 @@
     z-index: -1;
   }
   &__subtitle {
-    margin-bottom: 80px;
+    margin-bottom: 83px;
   }
   &__list {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
-    gap: 10px;
+    gap: 26px;
     list-style: none;
     counter-reset: num;
   }
@@ -407,14 +455,17 @@
     counter-increment: num;
     padding: 30px 0 0 40px;
     position: relative;
+    p {
+      letter-spacing: 0.11em;
+      line-height: 1.65;
+    }
     &::before {
       content: counter(num);
       position: absolute;
-      top: 0;
-      left: 0;
+      top: -7px;
+      left: -3px;
       @extend %pt-400;
       font-size: 100px;
-      line-height: 1;
       color: rgba($accent, 0.4);
       z-index: -1;
     }
@@ -430,21 +481,21 @@
       background-repeat: no-repeat;
     }
     &:nth-child(1)::after {
-      top: -3px;
+      top: -8px;
       right: -112%;
       background-image: url("../images/content/arrow-1.svg");
       width: 416px;
       height: 76px;
     }
     &:nth-child(2)::after {
-      bottom: -34px;
+      bottom: -50px;
       left: -117%;
       background-image: url("../images/content/arrow-2.svg");
       width: 450px;
       height: 117px;
     }
     &:nth-child(3)::after {
-      bottom: 28px;
+      bottom: 14px;
       right: -104%;
       background-image: url("../images/content/arrow-3.svg");
       width: 383px;
@@ -455,14 +506,14 @@
     @extend %pt-700;
     font-size: 30px;
     line-height: 1.2;
-    margin-bottom: 16px;
+    margin-bottom: 9px;
   }
 }
 
 //----------- reviews -----------
 
 .reviews {
-  padding: 140px 0 180px;
+  padding: 127px 0 180px;
   background-image: url("../images/content/decor.png");
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -483,7 +534,7 @@
     right: 0;
   }
   &__subtitle {
-    margin-bottom: 95px;
+    margin-bottom: 98px;
   }
   .swiper {
     position: relative;
@@ -497,7 +548,7 @@
     box-sizing: border-box;
   }
   &__img-box {
-    width: max-content;
+    width: fit-content;
     margin: 0 auto;
     position: relative;
     &::before {
@@ -512,6 +563,7 @@
   }
   &__img {
     width: 811px;
+    max-width: 100%;
     height: 610px;
     object-fit: cover;
   }
@@ -533,7 +585,7 @@
   }
   &__content {
     min-height: 330px;
-    background-color: #fff;
+    background-color: $light;
     padding: 58px 41px;
     margin-bottom: 45px;
     p {
@@ -544,36 +596,40 @@
   &__author {
     @extend %pt-700;
     font-size: 24px;
-    line-height: 1;
     letter-spacing: 0.02em;
     margin-bottom: 18px;
   }
   &__link {
     font-size: 16px;
-    color: #fff;
+    color: $light;
     text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 5px;
+    &:hover {
+      border-color: transparent;
+    }
   }
 }
 
 //----------- consult -----------
 
 .consult {
-  padding: 120px 0 168px;
+  padding: 111px 0 167px;
   &__title {
     margin-bottom: 20px;
   }
   &__subtitle {
-    margin-bottom: 130px;
+    margin-bottom: 140px;
   }
   &__form {
-    padding: 80px 100px;
+    padding: 80px 97px;
     box-shadow: 0px 0px 29px rgba(#2f2c2a, 0.18);
   }
   &__fieldset {
     display: grid;
     gap: 56px;
     & > :last-child {
-      padding-top: 13px;
+      padding-top: 18px;
     }
   }
   &__group {
@@ -588,21 +644,19 @@
   &__label {
     display: block;
     font-size: 18px;
-    line-height: 1;
     color: #5c5c5c;
     margin-bottom: 10px;
   }
   &__input,
   &__text {
     font-size: 18px;
-    line-height: 1;
     background-color: #f4f4f4;
     border-radius: 7px;
     &::placeholder {
       color: #a3a3a3;
     }
     &:focus-visible {
-      background-color: #fff;
+      background-color: $light;
       box-shadow: 0 15px 25px rgba(#000, 0.15);
     }
   }
@@ -618,6 +672,7 @@
     resize: none;
   }
   &__btn {
+    display: block;
     width: 100%;
   }
 }
@@ -625,10 +680,10 @@
 //----------- footer -----------
 
 .footer {
+  padding: 53px 0 37px;
   display: grid;
   justify-items: center;
-  gap: 29px;
-  padding: 53px 0 33px;
+  gap: 31px;
   background-color: #151211;
   color: $light;
   .socials__link {

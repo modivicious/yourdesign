@@ -9,8 +9,9 @@ body {
   background-color: #fff;
   @extend %mont-400;
   font-size: 12px;
-  line-height: 1.8;
+  line-height: 1;
   p {
+    line-height: 1.8;
     letter-spacing: 0.04em;
   }
 }
@@ -80,8 +81,7 @@ body {
     &::after {
       content: "";
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 57%;
       width: 165px;
       height: 2px;
       background-color: $accent;
@@ -108,7 +108,7 @@ body {
   line-height: 1;
   padding-bottom: 2px;
   border-bottom: 1px solid;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.12em;
   transition: all 0.15s;
   &:hover {
     color: #fff;
@@ -144,4 +144,8 @@ body {
 .swiper-button-next {
   right: 0;
   padding: 30px 0 30px 30px;
+}
+
+.hide-overflow{
+  overflow: hidden;
 }

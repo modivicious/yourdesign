@@ -13,7 +13,6 @@
   <link rel="preload" href="fonts/oranienbaum.woff2" as="font" crossorigin>
   <link rel="preload" href="fonts/ptserif.woff2" as="font" crossorigin>
   <link rel="preload" href="fonts/ptserifbold.woff2" as="font" crossorigin>
-  <link rel="preload" href="fonts/gothampro.woff2" as="font" crossorigin>
   <link rel="preload" href="images/content/intro-bg.jpg" as="image">
   <link rel="icon" href="images/favicon/favicon.svg">
   <link rel="mask-icon" href="images/favicon/apple-touch-icon.png" color="#000000">
@@ -73,6 +72,11 @@
     </div>
     <div class="wrapper">
       <nav class="menu">
+        <button class="menu__btn" type="button" aria-label="Меню">
+          <span></span>
+        </button>
+        <div class="menu__overlay" role="button" aria-hidden="true"></div>
+
         <a class="logo" href="#">
           <img class="logo__img" src="images/logo.svg" alt="Логотип, вернуться на главную страницу">
         </a>
@@ -257,140 +261,164 @@
             <div class="recent__slider swiper">
               <ul class="recent__list swiper-wrapper">
                 <li class="recent__item swiper-slide">
-                  <picture>
-
-                    <img class='recent__img' src='images/content/recent/1.jpg' alt=''>
-                  </picture>
-                  <a class="recent__content" href="#">
-                    <div class="recent__descr">
-                      <h4 class="recent__name">
-                        Уютная однушка
-                      </h4>
-                      <p>
-                        В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит качество
-                        работы, мы вернем деньги.
-                      </p>
-                    </div>
-                  </a>
+                  <div class="recent__inner">
+                    <picture>
+                      <source srcset="images/content/recent/1.webp" type="image/webp">
+                      <img class="recent__img" src="images/content/recent/1.jpg" alt="">
+                    </picture>
+                    <a class="recent__content" href="#">
+                      <div class="recent__descr">
+                        <h4 class="recent__name">
+                          Уютная однушка
+                        </h4>
+                        <p>
+                          В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит
+                          качество
+                          работы, мы вернем деньги.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 </li>
                 <li class="recent__item swiper-slide">
-                  <picture>
-
-                    <img class='recent__img' src='images/content/recent/2.jpg' alt=''>
-                  </picture>
-                  <a class="recent__content" href="#">
-                    <div class="recent__descr">
-                      <h4 class="recent__name">
-                        Уютная однушка
-                      </h4>
-                      <p>
-                        В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит качество
-                        работы, мы вернем деньги.
-                      </p>
-                    </div>
-                  </a>
+                  <div class="recent__inner">
+                    <picture>
+                      <source srcset="images/content/recent/2.webp" type="image/webp">
+                      <img class="recent__img" src="images/content/recent/2.jpg" alt="">
+                    </picture>
+                    <a class="recent__content" href="#">
+                      <div class="recent__descr">
+                        <h4 class="recent__name">
+                          Уютная однушка
+                        </h4>
+                        <p>
+                          В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит
+                          качество
+                          работы, мы вернем деньги.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 </li>
                 <li class="recent__item swiper-slide">
-                  <picture>
-
-                    <img class='recent__img' src='images/content/recent/3.jpg' alt=''>
-                  </picture>
-                  <a class="recent__content" href="#">
-                    <div class="recent__descr">
-                      <h4 class="recent__name">
-                        Уютная однушка
-                      </h4>
-                      <p>
-                        В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит качество
-                        работы, мы вернем деньги.
-                      </p>
-                    </div>
-                  </a>
+                  <div class="recent__inner">
+                    <picture>
+                      <source srcset="images/content/recent/3.webp" type="image/webp">
+                      <img class="recent__img" src="images/content/recent/3.jpg" alt="">
+                    </picture>
+                    <a class="recent__content" href="#">
+                      <div class="recent__descr">
+                        <h4 class="recent__name">
+                          Уютная однушка
+                        </h4>
+                        <p>
+                          В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит
+                          качество
+                          работы, мы вернем деньги.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 </li>
                 <li class="recent__item swiper-slide">
-                  <picture>
-
-                    <img class='recent__img' src='images/content/recent/1.jpg' alt=''>
-                  </picture>
-                  <a class="recent__content" href="#">
-                    <div class="recent__descr">
-                      <h4 class="recent__name">
-                        Уютная однушка
-                      </h4>
-                      <p>
-                        В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит качество
-                        работы, мы вернем деньги.
-                      </p>
-                    </div>
-                  </a>
+                  <div class="recent__inner">
+                    <picture>
+                      <source srcset="images/content/recent/4.webp" type="image/webp">
+                      <img class="recent__img" src="images/content/recent/4.jpg" alt="">
+                    </picture>
+                    <a class="recent__content" href="#">
+                      <div class="recent__descr">
+                        <h4 class="recent__name">
+                          Уютная однушка
+                        </h4>
+                        <p>
+                          В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит
+                          качество
+                          работы, мы вернем деньги.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 </li>
                 <li class="recent__item swiper-slide">
-                  <picture>
-
-                    <img class='recent__img' src='images/content/recent/4.jpg' alt=''>
-                  </picture>
-                  <a class="recent__content" href="#">
-                    <div class="recent__descr">
-                      <h4 class="recent__name">
-                        Уютная однушка
-                      </h4>
-                      <p>
-                        В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит качество
-                        работы, мы вернем деньги.
-                      </p>
-                    </div>
-                  </a>
+                  <div class="recent__inner">
+                    <picture>
+                      <source srcset="images/content/recent/5.webp" type="image/webp">
+                      <img class="recent__img" src="images/content/recent/5.jpg" alt="">
+                    </picture>
+                    <a class="recent__content" href="#">
+                      <div class="recent__descr">
+                        <h4 class="recent__name">
+                          Уютная однушка
+                        </h4>
+                        <p>
+                          В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит
+                          качество
+                          работы, мы вернем деньги.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 </li>
                 <li class="recent__item swiper-slide">
-                  <picture>
-
-                    <img class='recent__img' src='images/content/recent/5.jpg' alt=''>
-                  </picture>
-                  <a class="recent__content" href="#">
-                    <div class="recent__descr">
-                      <h4 class="recent__name">
-                        Уютная однушка
-                      </h4>
-                      <p>
-                        В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит качество
-                        работы, мы вернем деньги.
-                      </p>
-                    </div>
-                  </a>
+                  <div class="recent__inner">
+                    <picture>
+                      <source srcset="images/content/recent/6.webp" type="image/webp">
+                      <img class="recent__img" src="images/content/recent/6.jpg" alt="">
+                    </picture>
+                    <a class="recent__content" href="#">
+                      <div class="recent__descr">
+                        <h4 class="recent__name">
+                          Уютная однушка
+                        </h4>
+                        <p>
+                          В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит
+                          качество
+                          работы, мы вернем деньги.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 </li>
                 <li class="recent__item swiper-slide">
-                  <picture>
-
-                    <img class='recent__img' src='images/content/recent/6.jpg' alt=''>
-                  </picture>
-                  <a class="recent__content" href="#">
-                    <div class="recent__descr">
-                      <h4 class="recent__name">
-                        Уютная однушка
-                      </h4>
-                      <p>
-                        В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит качество
-                        работы, мы вернем деньги.
-                      </p>
-                    </div>
-                  </a>
+                  <div class="recent__inner">
+                    <picture>
+                      <source srcset="images/content/recent/1.webp" type="image/webp">
+                      <img class="recent__img" src="images/content/recent/6.jpg" alt="">
+                    </picture>
+                    <a class="recent__content" href="#">
+                      <div class="recent__descr">
+                        <h4 class="recent__name">
+                          Уютная однушка
+                        </h4>
+                        <p>
+                          В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит
+                          качество
+                          работы, мы вернем деньги.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 </li>
                 <li class="recent__item swiper-slide">
-                  <picture>
-
-                    <img class='recent__img' src='images/content/recent/4.jpg' alt=''>
-                  </picture>
-                  <a class="recent__content" href="#">
-                    <div class="recent__descr">
-                      <h4 class="recent__name">
-                        Уютная однушка
-                      </h4>
-                      <p>
-                        В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит качество
-                        работы, мы вернем деньги.
-                      </p>
-                    </div>
-                  </a>
+                  <div class="recent__inner">
+                    <picture>
+                      <source srcset="images/content/recent/3.webp" type="image/webp">
+                      <img class="recent__img" src="images/content/recent/3.jpg" alt="">
+                    </picture>
+                    <a class="recent__content" href="#">
+                      <div class="recent__descr">
+                        <h4 class="recent__name">
+                          Уютная однушка
+                        </h4>
+                        <p>
+                          В нашей команде работают профессионалы в сфере дизайна интерьеров. Если Вас не устроит
+                          качество
+                          работы, мы вернем деньги.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -475,8 +503,8 @@
               <article>
                 <div class="reviews__img-box">
                   <picture>
-
-                    <img class='reviews__img' src='images/content/reviews/1.jpg' alt=''>
+                    <source srcset="images/content/reviews/1.webp" type="image/webp">
+                    <img class="reviews__img" src="images/content/reviews/1.jpg" alt="">
                   </picture>
                 </div>
                 <div class="reviews__glass">
@@ -506,7 +534,7 @@
                 <div class="reviews__img-box">
                   <picture>
 
-                    <img class='reviews__img' src='images/content/reviews/1.jpg' alt=''>
+                    <img class="reviews__img" src="images/content/reviews/1.jpg" alt="">
                   </picture>
                 </div>
                 <div class="reviews__glass">
