@@ -27,9 +27,13 @@ $(function () {
 
   new Swiper(".reviews__slider", {
     slidesPerView: 1,
-    effect: 'fade',
     simulateTouch: false,
     loop: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    speed: 550,
     navigation: {
       nextEl: ".reviews__next",
       prevEl: ".reviews__prev",
@@ -51,3 +55,31 @@ function toggleMenu() {
 
 $(".menu__btn").on("click", () => toggleMenu());
 $(".menu__overlay").on("click", () => toggleMenu());
+
+
+const animItems = document.querySelectorAll(".animation");
+
+function animateStart(e) {
+  if (e.dataset.anim)
+    e.classList.add(e.dataset.anim);
+  else return;
+}
+
+const imgOptions = {
+  threshold: 0,
+  rootMargin: "4000px 0px -80px 0px",
+};
+
+const animObserver = new IntersectionObserver((entries, animObserver) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    else {
+      animateStart(entry.target);
+      animObserver.unobserve(entry.target);
+    }
+  });
+}, imgOptions);
+
+animItems.forEach((anim) => {
+  animObserver.observe(anim);
+});

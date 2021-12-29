@@ -38,7 +38,7 @@
     align-items: center;
     svg {
       margin-right: 13px;
-      transition: all 0.15s;
+      transition: all 0.25s;
     }
     &:hover {
       svg {
@@ -60,7 +60,7 @@
     width: 40px;
     height: 40px;
     svg {
-      transition: all 0.15s;
+      transition: all 0.25s;
     }
     &:hover {
       svg {
@@ -75,7 +75,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 24px 0;
-
   &__btn {
     display: none;
     width: 44px;
@@ -97,7 +96,7 @@
       width: 22px;
       height: 3px;
       background-color: rgba(255, 255, 255, 0.8);
-      transition: all 0.3s;
+      transition: all 0.5s;
     }
     &::before {
       top: 14px;
@@ -116,13 +115,12 @@
     opacity: 0;
     background-color: rgba(45, 45, 45, 0.45);
     z-index: 140;
-    transition: 0.25s ease-in;
+    transition: 0.45s ease-in;
     &.menu__overlay--active {
       visibility: visible;
       opacity: 1;
     }
   }
-
   &__content {
     display: flex;
     align-items: center;
@@ -150,7 +148,7 @@
       width: 0px;
       height: 2px;
       background-color: $accent;
-      transition: all 0.3s;
+      transition: all 0.4s;
     }
     &:hover::before {
       width: 70%;
@@ -193,7 +191,7 @@
     justify-content: center;
     align-items: center;
     svg {
-      transition: all 0.15s;
+      transition: all 0.25s;
     }
     &:hover {
       svg {
@@ -207,10 +205,20 @@
 
 .intro {
   min-height: 960px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   position: relative;
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -218,6 +226,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
     background-color: rgba(#222, 0.45);
   }
   &__inner {
@@ -225,6 +234,7 @@
     min-height: 960px;
     padding: 248px 0 115px;
     position: relative;
+    z-index: 2;
     color: $light;
   }
   &__title {
@@ -262,6 +272,8 @@
   }
   &__subtitle {
     margin-bottom: 63px;
+    position: relative;
+    z-index: 3;
   }
   &__content {
     margin-top: -84px;
@@ -272,6 +284,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation-duration: 1s;
   }
   &__descr {
     max-width: 597px;
@@ -302,6 +315,7 @@
     grid-template-columns: repeat(3, 330px);
     justify-content: space-between;
     row-gap: 91px;
+    animation-duration: 1s;
   }
   &__item {
     max-width: 320px;
@@ -314,36 +328,54 @@
       left: 0;
       background-repeat: no-repeat;
     }
-    &--best::before {
-      background-image: url("../images/icons/best.png");
-      width: 90px;
-      height: 88px;
+    &--best {
+      animation-delay: 0.2s;
+      &::before {
+        background-image: url("../images/icons/best.png");
+        width: 90px;
+        height: 88px;
+      }
     }
-    &--affordability::before {
-      background-image: url("../images/icons/affordability.png");
-      width: 91px;
-      height: 90px;
+    &--affordability {
+      animation-delay: 0.6s;
+      &::before {
+        background-image: url("../images/icons/affordability.png");
+        width: 91px;
+        height: 90px;
+      }
     }
-    &--time::before {
-      background-image: url("../images/icons/time.png");
-      width: 55px;
-      height: 90px;
-      left: 31px;
+    &--time {
+      animation-delay: 1s;
+      &::before {
+        background-image: url("../images/icons/time.png");
+        width: 55px;
+        height: 90px;
+        left: 31px;
+      }
     }
-    &--details::before {
-      background-image: url("../images/icons/details.png");
-      width: 91px;
-      height: 92px;
+    &--details {
+      animation-delay: 0.2s;
+      &::before {
+        background-image: url("../images/icons/details.png");
+        width: 91px;
+        height: 92px;
+      }
     }
-    &--quality::before {
-      background-image: url("../images/icons/quality.png");
-      width: 95px;
-      height: 80px;
+    &--quality {
+      animation-delay: 0.6s;
+      &::before {
+        background-image: url("../images/icons/quality.png");
+        width: 95px;
+        height: 80px;
+      }
     }
-    &--love::before {
-      background-image: url("../images/icons/love.png");
-      width: 96px;
-      height: 87px;
+    &--love {
+      animation-delay: 1s;
+      &::before {
+        background-image: url("../images/icons/love.png");
+        width: 96px;
+        height: 87px;
+      }
     }
   }
   &__name {
@@ -362,6 +394,7 @@
   }
   &__box {
     position: relative;
+    animation-duration: 1s;
   }
   .swiper {
     width: 100%;
@@ -449,6 +482,7 @@
     gap: 26px;
     list-style: none;
     counter-reset: num;
+    animation-duration: 1s;
   }
   &__item {
     max-width: 375px;
@@ -514,7 +548,7 @@
 
 .reviews {
   padding: 127px 0 180px;
-  background-image: url("../images/content/decor.png");
+  background-image: url("../images/content/decor.svg");
   background-repeat: no-repeat;
   background-position: center bottom;
   position: relative;
@@ -522,7 +556,7 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: 11px;
+    bottom: 9px;
     width: calc(50% - 110px);
     height: 2px;
     background-color: $accent;
@@ -547,10 +581,19 @@
     position: relative;
     box-sizing: border-box;
   }
+  &__article {
+    min-height: 610px;
+    display: grid;
+    align-items: center;
+  }
   &__img-box {
     width: fit-content;
     margin: 0 auto;
-    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     &::before {
       content: "";
       position: absolute;
@@ -564,17 +607,15 @@
   &__img {
     width: 811px;
     max-width: 100%;
-    height: 610px;
+    height: 100%;
     object-fit: cover;
   }
   &__glass {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     max-width: 945px;
     width: 100%;
-    min-height: 486px;
+    min-height: 517px;
+    margin: 0 auto;
     padding: 44px 0;
     background-color: rgba(#bfb6af, 0.3);
     border: 1px solid rgba($dark, 0.6);
@@ -584,7 +625,7 @@
     align-items: center;
   }
   &__content {
-    min-height: 330px;
+    min-height: 360px;
     background-color: $light;
     padding: 58px 41px;
     margin-bottom: 45px;
@@ -661,12 +702,12 @@
     }
   }
   &__input {
-    padding: 20px 21px 24px;
+    padding: 0 21px;
     width: 100%;
     height: 65px;
   }
   &__text {
-    padding: 17px 21px;
+    padding: 26px 21px;
     width: 100%;
     height: 167px;
     resize: none;

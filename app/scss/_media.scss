@@ -32,6 +32,12 @@
       justify-items: center;
       gap: 88px 50px;
     }
+    &__item {
+      max-width: 300px;
+      &--time::before {
+        left: 0;
+      }
+    }
   }
   .stages {
     &__item:nth-child(3)::after {
@@ -41,6 +47,9 @@
   .consult {
     &__fieldset {
       gap: 67px;
+      & > :last-child {
+        padding-top: 0;
+      }
     }
     &__group {
       flex-direction: column;
@@ -60,8 +69,13 @@
 }
 
 @media (max-width: 1015px) {
-  .intro__inner {
-    min-height: unset;
+  .intro {
+    min-height: 100vh;
+    &__inner {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+    }
   }
   .menu {
     &__btn {
@@ -93,7 +107,7 @@
       font-size: 20px;
       background-color: $dark;
       transform: translateX(-200%);
-      transition: all 0.3s;
+      transition: all 0.5s;
       &.menu__list--active {
         transform: translateX(0);
       }
@@ -113,6 +127,7 @@
     }
   }
   .search {
+    padding-left: 0;
     &::before {
       content: unset;
     }
@@ -218,14 +233,22 @@
 }
 
 @media (max-width: 768px) {
-  .container,
-  .wrapper {
-    padding: 0 50px;
+  .swiper-button-prev,
+  .swiper-button-next {
+    svg {
+      transform: scale(0.6);
+    }
   }
   .header {
     background-color: $dark;
     &__top {
       display: none;
+    }
+    .abbr {
+      display: none;
+    }
+    .name {
+      transform: translateX(-38px);
     }
   }
   .intro {
@@ -257,69 +280,234 @@
   }
   .recent {
     padding: 82px 0 86px;
+    .swiper {
+      height: 310px;
+    }
     .swiper-button-prev,
     .swiper-button-next {
       svg {
         fill: rgba(#fff, 0.4);
+        transform: scale(0.6);
       }
     }
     .swiper-button-prev {
-      padding: 100px 50px 100px 20px;
+      padding: 100px 50px 100px 15px;
     }
     .swiper-button-next {
-      padding: 100px 20px 100px 50px;
+      padding: 100px 15px 100px 50px;
     }
     .container--disable {
       max-width: unset !important;
       padding: 0 !important;
     }
+    &__box {
+      max-width: 650px;
+      margin: 0 auto;
+    }
     &__subtitle {
       margin-bottom: 80px;
     }
+    &__img {
+      height: 310px;
+    }
   }
-  .stages{
+  .stages {
     padding: 84px 0;
   }
-  .reviews{
+  .reviews {
     padding: 75px 0 145px;
-    &__subtitle{
+    &__subtitle {
       margin-bottom: 90px;
     }
-    &__img{
-      width: 560px;
-      height: 427px;
+    &__article {
+      min-height: 427px;
     }
-    &__glass{
+    &__img {
+      width: 560px;
+    }
+    &__glass {
       padding: 26px 0;
       max-width: 650px;
       min-height: 344px;
     }
-    &__content{
+    &__content {
       padding: 34px 30px 25px;
       min-height: 244px;
       margin-bottom: 26px;
-      p{
+      p {
         max-width: 364px;
         font-size: 12px;
       }
     }
-    &__author{
+    &__author {
       font-size: 16px;
     }
-    &__link{
+    &__link {
       font-size: 11px;
     }
   }
-  .consult{
+  .consult {
     padding: 70px 0 88px;
-    &__subtitle{
+    &__subtitle {
       margin-bottom: 120px;
     }
-    .container{
-      padding: 0 20px;
-    }
-    &__form{
+    &__form {
       padding: 65px 65px 65px 50px;
+    }
+  }
+}
+
+@media (max-width: 675px) {
+  .title {
+    font-size: 60px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+  .intro__title {
+    font-size: 70px;
+  }
+  .benefits {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+    &__item {
+      max-width: 390px;
+    }
+  }
+  .stages {
+    &__list {
+      justify-items: center;
+    }
+    &__item {
+      &::after {
+        content: unset;
+      }
+      &:nth-child(2n) {
+        margin-left: unset;
+      }
+    }
+  }
+  .consult {
+    &__form {
+      padding: 50px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 50px;
+  }
+  .subtitle {
+    margin-bottom: 50px;
+  }
+  .intro {
+    &__inner {
+      padding: 230px 0 55px;
+    }
+    &__title {
+      font-size: 60px;
+    }
+    &__subtitle {
+      font-size: 14px;
+    }
+  }
+  .about {
+    padding: 50px 0;
+    &__content {
+      margin-top: -100px;
+    }
+    &__descr {
+      padding: 35px 50px;
+    }
+  }
+  .benefits {
+    padding: 60px 0 50px;
+    &__list {
+      gap: 60px;
+    }
+  }
+  .recent {
+    padding: 50px 0;
+  }
+  .stages {
+    padding: 50px 0;
+    &__list {
+      gap: 35px;
+    }
+    &__item::before {
+      font-size: 82px;
+      top: 0;
+    }
+    &__name {
+      font-size: 26px;
+    }
+  }
+  .reviews {
+    padding: 50px 0 100px;
+    &__content {
+      padding: 34px 42px;
+    }
+  }
+  .consult {
+    padding: 50px 0 60px;
+    &__fieldset {
+      gap: 40px;
+    }
+    &__box:not(:last-child) {
+      margin-bottom: 40px;
+    }
+    &__form {
+      padding: 40px 25px;
+    }
+    &__label {
+      font-size: 14px;
+    }
+    &__input,
+    &__text {
+      font-size: 14px;
+    }
+    &__btn {
+      min-width: unset;
+    }
+  }
+  .footer {
+    padding: 40px 0 25px;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 415px) {
+  .title {
+    font-size: 42px;
+  }
+  .subtitle {
+    font-size: 13px;
+  }
+  .intro {
+    &__title {
+      font-size: 50px;
+    }
+    &__link-btn {
+      min-width: 280px;
+    }
+  }
+  .about {
+    &__descr {
+      padding: 35px;
+    }
+  }
+  .consult {
+    .container {
+      padding: 0;
+    }
+    &__input {
+      height: 50px;
+      padding: 0 15px;
+    }
+    &__text {
+      padding: 20px 15px;
     }
   }
 }
