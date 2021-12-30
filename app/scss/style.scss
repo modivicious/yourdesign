@@ -107,15 +107,15 @@
   }
   &__overlay {
     position: fixed;
-    top: 0;
+    top: 134px;
     right: 0;
     height: 100%;
     width: 100%;
     visibility: hidden;
     opacity: 0;
-    background-color: rgba(45, 45, 45, 0.45);
+    background-color: rgba(54, 49, 46, 0.8);
     z-index: 140;
-    transition: 0.45s ease-in;
+    transition: 0.25s ease-in;
     &.menu__overlay--active {
       visibility: visible;
       opacity: 1;
@@ -148,7 +148,7 @@
       width: 0px;
       height: 2px;
       background-color: $accent;
-      transition: all 0.4s;
+      transition: all 0.5s;
     }
     &:hover::before {
       width: 70%;
@@ -236,6 +236,8 @@
     position: relative;
     z-index: 2;
     color: $light;
+    animation-duration: 1.1s;
+    animation-delay: 0.5s;
   }
   &__title {
     @extend %oran;
@@ -249,9 +251,10 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 172px;
+      width: 0;
       height: 4px;
       background-color: $accent;
+      animation-delay: 1.2s;
     }
   }
   &__subtitle {
@@ -328,56 +331,39 @@
       left: 0;
       background-repeat: no-repeat;
     }
-    &--best {
-      animation-delay: 0.2s;
-      &::before {
-        background-image: url("../images/icons/best.png");
-        width: 90px;
-        height: 88px;
-      }
+    &--best::before {
+      background-image: url("../images/icons/best.png");
+      width: 90px;
+      height: 88px;
     }
-    &--affordability {
-      animation-delay: 0.6s;
-      &::before {
-        background-image: url("../images/icons/affordability.png");
-        width: 91px;
-        height: 90px;
-      }
+    &--affordability::before {
+      background-image: url("../images/icons/affordability.png");
+      width: 91px;
+      height: 90px;
     }
-    &--time {
-      animation-delay: 1s;
-      &::before {
-        background-image: url("../images/icons/time.png");
-        width: 55px;
-        height: 90px;
-        left: 31px;
-      }
+    &--time::before {
+      background-image: url("../images/icons/time.png");
+      width: 55px;
+      height: 90px;
+      left: 31px;
     }
-    &--details {
-      animation-delay: 0.2s;
-      &::before {
-        background-image: url("../images/icons/details.png");
-        width: 91px;
-        height: 92px;
-      }
+    &--details::before {
+      background-image: url("../images/icons/details.png");
+      width: 91px;
+      height: 92px;
     }
-    &--quality {
-      animation-delay: 0.6s;
-      &::before {
-        background-image: url("../images/icons/quality.png");
-        width: 95px;
-        height: 80px;
-      }
+    &--quality:before {
+      background-image: url("../images/icons/quality.png");
+      width: 95px;
+      height: 80px;
     }
-    &--love {
-      animation-delay: 1s;
-      &::before {
-        background-image: url("../images/icons/love.png");
-        width: 96px;
-        height: 87px;
-      }
+    &--love::before {
+      background-image: url("../images/icons/love.png");
+      width: 96px;
+      height: 87px;
     }
   }
+
   &__name {
     @extend %pt-700;
     font-size: 16px;
@@ -459,6 +445,7 @@
   padding: 125px 0 145px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   color: $light;
   position: relative;
   z-index: 0;
@@ -550,13 +537,13 @@
   padding: 127px 0 180px;
   background-image: url("../images/content/decor.svg");
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center bottom 2px;
   position: relative;
   &::before,
   &::after {
     content: "";
     position: absolute;
-    bottom: 9px;
+    bottom: 10px;
     width: calc(50% - 110px);
     height: 2px;
     background-color: $accent;
@@ -659,8 +646,8 @@
   &__title {
     margin-bottom: 20px;
   }
-  &__subtitle {
-    margin-bottom: 140px;
+  &__inner {
+    padding-top: 140px;
   }
   &__form {
     padding: 80px 97px;
@@ -727,15 +714,20 @@
   gap: 31px;
   background-color: #151211;
   color: $light;
-  .socials__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-  }
-  .socials__item:not(:last-child) {
-    margin-right: 12px;
+  .socials {
+    margin-right: -4px;
+    &__item {
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+    }
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+    }
   }
 }
 

@@ -21,7 +21,7 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header animation" data-anim="animation__fade-down">
     <div class="header__top">
       <div class="wrapper">
         <div class="header__top-inner">
@@ -147,9 +147,9 @@
         </picture>
       </div>
       <div class="container">
-        <div class="intro__inner">
+        <div class="intro__inner animation" data-anim="animation__fade-up">
           <div class="intro__content">
-            <h1 class="intro__title">
+            <h1 class="intro__title animation opaque" data-extraanim="animation__line-start">
               Дизайн-студия создания интерьеров
             </h1>
             <h2 class="intro__subtitle">
@@ -166,7 +166,7 @@
     </section>
     <section class="about">
       <div class="container">
-        <h2 class="title about__title animation" data-anim="animation__fade-up">
+        <h2 class="title about__title animation" data-anim="animation__fade-up" data-extraanim="animation__line-start">
           <span>О нас</span>
         </h2>
         <h3 class="subtitle about__subtitle animation" data-anim="animation__fade-up">
@@ -198,14 +198,14 @@
     </section>
     <section class="benefits">
       <div class="container">
-        <h2 class="title benefits__title animation" data-anim="animation__fade-up">
+        <h2 class="title about__title animation" data-anim="animation__fade-up" data-extraanim="animation__line-start">
           <span>Наши преимущества</span>
         </h2>
         <h3 class="subtitle benefits__subtitle animation" data-anim="animation__fade-up">
           Узнайте, почему люди выбирают именно YourDesign.
         </h3>
-        <ul class="benefits__list animation delay-min" data-anim="animation__fade-in">
-          <li class="benefits__item benefits__item--best">
+        <ul class="benefits__list animation opaque" data-anim="list-anim">
+          <li class="benefits__item benefits__item--best animation some-anim">
             <h4 class="benefits__name">
               Лучшие дизайнеры
             </h4>
@@ -214,7 +214,7 @@
               сфере.
             </p>
           </li>
-          <li class="benefits__item benefits__item--affordability">
+          <li class="benefits__item benefits__item--affordability animation some-anim">
             <h4 class="benefits__name">
               Доступность
             </h4>
@@ -224,7 +224,7 @@
               интерьер.
             </p>
           </li>
-          <li class="benefits__item benefits__item--time">
+          <li class="benefits__item benefits__item--time animation some-anim">
             <h4 class="benefits__name">
               Ценим Ваше время
             </h4>
@@ -233,7 +233,7 @@
               принцип.
             </p>
           </li>
-          <li class="benefits__item benefits__item--details">
+          <li class="benefits__item benefits__item--details animation some-anim">
             <h4 class="benefits__name">
               Внимание к деталям
             </h4>
@@ -243,7 +243,7 @@
               радовал.
             </p>
           </li>
-          <li class="benefits__item benefits__item--quality">
+          <li class="benefits__item benefits__item--quality animation some-anim">
             <h4 class="benefits__name">
               Качество
             </h4>
@@ -253,7 +253,7 @@
               деньги.
             </p>
           </li>
-          <li class="benefits__item benefits__item--love">
+          <li class="benefits__item benefits__item--love animation some-anim">
             <h4 class="benefits__name">
               Делаем с любовью
             </h4>
@@ -268,18 +268,18 @@
     </section>
     <section class="recent">
       <div class="wrapper">
-        <h2 class="title recent__title animation" data-anim="animation__fade-up">
+        <h2 class="title about__title animation" data-anim="animation__fade-up" data-extraanim="animation__line-start">
           <span>Недавние проекты</span>
         </h2>
         <h3 class="subtitle recent__subtitle animation" data-anim="animation__fade-up">
           Мы публикуем все наши проекты, чтобы Вы могли с ними ознакомиться. Если хотите увидеть больше, листайте с
           помощью стрелки.
         </h3>
-        <div class="recent__box animation delay-min" data-anim="animation__fade-in">
+        <div class="recent__box animation opaque" data-anim="list-anim">
           <div class="container container--disable">
             <div class="recent__slider swiper">
               <ul class="recent__list swiper-wrapper">
-                <li class="recent__item swiper-slide">
+                <li class="recent__item swiper-slide animation some-anim">
                   <div class="recent__inner">
                     <picture>
                       <source srcset="images/content/recent/1.webp" type="image/webp">
@@ -299,7 +299,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="recent__item swiper-slide">
+                <li class="recent__item swiper-slide animation some-anim">
                   <div class="recent__inner">
                     <picture>
                       <source srcset="images/content/recent/2.webp" type="image/webp">
@@ -319,7 +319,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="recent__item swiper-slide">
+                <li class="recent__item swiper-slide animation some-anim">
                   <div class="recent__inner">
                     <picture>
                       <source srcset="images/content/recent/3.webp" type="image/webp">
@@ -339,7 +339,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="recent__item swiper-slide">
+                <li class="recent__item swiper-slide animation some-anim">
                   <div class="recent__inner">
                     <picture>
                       <source srcset="images/content/recent/4.webp" type="image/webp">
@@ -359,7 +359,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="recent__item swiper-slide">
+                <li class="recent__item swiper-slide animation some-anim">
                   <div class="recent__inner">
                     <picture>
                       <source srcset="images/content/recent/5.webp" type="image/webp">
@@ -379,7 +379,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="recent__item swiper-slide">
+                <li class="recent__item swiper-slide animation some-anim">
                   <div class="recent__inner">
                     <picture>
                       <source srcset="images/content/recent/6.webp" type="image/webp">
@@ -399,7 +399,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="recent__item swiper-slide">
+                <li class="recent__item swiper-slide animation some-anim">
                   <div class="recent__inner">
                     <picture>
                       <source srcset="images/content/recent/1.webp" type="image/webp">
@@ -419,7 +419,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="recent__item swiper-slide">
+                <li class="recent__item swiper-slide animation some-anim">
                   <div class="recent__inner">
                     <picture>
                       <source srcset="images/content/recent/3.webp" type="image/webp">
@@ -443,21 +443,21 @@
             </div>
           </div>
           <div class="swiper-button-prev recent__prev">
-            <svg width="35" height="60" opacity=".4" fill="#D77E4A">
+            <svg width="35" height="60" opaque=".4" fill="#D77E4A">
               <use href="images/icons/sprite.svg#arrow-left"></use>
             </svg>
           </div>
           <div class="swiper-button-next recent__next">
-            <svg width="35" height="60" opacity=".4" fill="#D77E4A">
+            <svg width="35" height="60" opaque=".4" fill="#D77E4A">
               <use href="images/icons/sprite.svg#arrow-right"></use>
             </svg>
           </div>
         </div>
       </div>
     </section>
-    <section class="stages" style="background-image: url(images/content/stages-bg.jpg);">
+    <section class="stages scroll-image" style="background-image: url(images/content/stages-bg.jpg);">
       <div class="container">
-        <h2 class="title stages__title animation" data-anim="animation__fade-up">
+        <h2 class="title about__title animation" data-anim="animation__fade-up" data-extraanim="animation__line-start">
           <span>Как мы работаем?</span>
         </h2>
         <h3 class="subtitle stages__subtitle animation" data-anim="animation__fade-up">
@@ -510,7 +510,7 @@
     </section>
     <div class="wrapper">
       <section class="reviews">
-        <h2 class="title reviews__title animation" data-anim="animation__fade-up">
+        <h2 class="title about__title animation" data-anim="animation__fade-up" data-extraanim="animation__line-start">
           <span>Отзывы клиентов</span>
         </h2>
         <h3 class="subtitle reviews__subtitle animation" data-anim="animation__fade-up">
@@ -609,12 +609,12 @@
             </li>
           </ul>
           <div class="swiper-button-prev reviews__prev">
-            <svg width="35" height="60" opacity=".4" fill="#D77E4A">
+            <svg width="35" height="60" opaque=".4" fill="#D77E4A">
               <use href="images/icons/sprite.svg#arrow-left"></use>
             </svg>
           </div>
           <div class="swiper-button-next reviews__next">
-            <svg width="35" height="60" opacity=".4" fill="#D77E4A">
+            <svg width="35" height="60" opaque=".4" fill="#D77E4A">
               <use href="images/icons/sprite.svg#arrow-right"></use>
             </svg>
           </div>
@@ -623,7 +623,7 @@
     </div>
     <section class="consult">
       <div class="wrapper">
-        <h2 class="title consult__title animation" data-anim="animation__fade-up">
+        <h2 class="title about__title animation" data-anim="animation__fade-up" data-extraanim="animation__line-start">
           <span>
             Закажите бесплатную консультацию
           </span>
@@ -633,37 +633,39 @@
           проконсультировать Вас по
           проекту, даже если Вы не являетесь клиентом YourDesign.
         </h3>
-        <div class="container">
-          <form class="consult__form animation delay-min" data-anim="animation__fade-in" action="#">
-            <fieldset class="consult__fieldset">
-              <legend class="visually-hidden">
-                Введите Ваши контакные данные и интересующий вопрос
-              </legend>
-              <div class="consult__group">
-                <div class="consult__box">
-                  <label class="consult__label" for="name">Ваше имя</label>
-                  <input class="consult__input" id="name" type="text" placeholder="Введите Ваше имя" required>
+        <div class="consult__inner animation delay-min" data-anim="animation__fade-in">
+          <div class="container">
+            <form class="consult__form" action="#">
+              <fieldset class="consult__fieldset">
+                <legend class="visually-hidden">
+                  Введите Ваши контакные данные и интересующий вопрос
+                </legend>
+                <div class="consult__group">
+                  <div class="consult__box">
+                    <label class="consult__label" for="name">Ваше имя</label>
+                    <input class="consult__input" id="name" type="text" placeholder="Введите Ваше имя" required>
+                  </div>
+                  <div class="consult__box">
+                    <label class="consult__label" for="surname">Ваша фамилия</label>
+                    <input class="consult__input" id="surname" type="text" placeholder="Введите Вашу фамилию" required>
+                  </div>
                 </div>
-                <div class="consult__box">
-                  <label class="consult__label" for="surname">Ваша фамилия</label>
-                  <input class="consult__input" id="surname" type="text" placeholder="Введите Вашу фамилию" required>
+                <div>
+                  <label class="consult__label" for="text">Ваше сообщение</label>
+                  <textarea class="consult__text" id="text" placeholder="Введите Ваше сообщение" required></textarea>
                 </div>
-              </div>
-              <div>
-                <label class="consult__label" for="text">Ваше сообщение</label>
-                <textarea class="consult__text" id="text" placeholder="Введите Ваше сообщение" required></textarea>
-              </div>
-              <div class="consult__group">
-                <div class="consult__box">
-                  <label class="consult__label" for="tel">Номер телефона</label>
-                  <input class="consult__input" id="tel" type="tel" placeholder="Введите Ваш номер телефона" required>
+                <div class="consult__group">
+                  <div class="consult__box">
+                    <label class="consult__label" for="tel">Номер телефона</label>
+                    <input class="consult__input" id="tel" type="tel" placeholder="Введите Ваш номер телефона" required>
+                  </div>
+                  <div class="consult__box">
+                    <button class="link-btn consult__btn" type="submit">Отправить</button>
+                  </div>
                 </div>
-                <div class="consult__box">
-                  <button class="link-btn consult__btn" type="submit">Отправить</button>
-                </div>
-              </div>
-            </fieldset>
-          </form>
+              </fieldset>
+            </form>
+          </div>
         </div>
       </div>
     </section>
