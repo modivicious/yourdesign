@@ -3,8 +3,7 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local("montserrat"), local("Montserrat-Regular"),
-    url("../fonts/montserrat.woff2") format("woff2"),
+  src: url("../fonts/montserrat.woff2") format("woff2"),
     url("../fonts/montserrat.woff") format("woff");
 }
 
@@ -13,8 +12,7 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local("montserratbold"), local("Montserrat-Bold"),
-    url("../fonts/montserratbold.woff2") format("woff2"),
+  src: url("../fonts/montserratbold.woff2") format("woff2"),
     url("../fonts/montserratbold.woff") format("woff");
 }
 
@@ -23,8 +21,7 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local("oranienbaum"), local("Oranienbaum"),
-    url("../fonts/oranienbaum.woff2") format("woff2"),
+  src: url("../fonts/oranienbaum.woff2") format("woff2"),
     url("../fonts/oranienbaum.woff") format("woff");
 }
 
@@ -33,8 +30,7 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local("ptserif"), local("PT-Serif"),
-    url("../fonts/ptserif.woff2") format("woff2"),
+  src: url("../fonts/ptserif.woff2") format("woff2"),
     url("../fonts/ptserif.woff") format("woff");
 }
 
@@ -43,7 +39,6 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local("ptserifbold"), local("PT-SerifBold"),
-    url("../fonts/ptserifbold.woff2") format("woff2"),
+  src: url("../fonts/ptserifbold.woff2") format("woff2"),
     url("../fonts/ptserifbold.woff") format("woff");
 }
