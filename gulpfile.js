@@ -70,7 +70,7 @@ function webpDel() {
 }
 
 function build() {
-  return src(["app/**/*.html", "app/css/style.min.css", "app/js/main.min.js"], {
+  return src(["app/**/*.html", "app/fonts/*", "app/**/manifest.json", "app/css/style.min.css", "app/js/main.min.js"], {
     base: "app",
   }).pipe(dest("dist"));
 }
