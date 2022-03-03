@@ -290,16 +290,11 @@
     padding: 82px 0 86px;
     .swiper-button-prev,
     .swiper-button-next {
+      padding: 50px 15px;
       svg {
         fill: rgba(#fff, 0.4);
         transform: scale(0.6);
       }
-    }
-    .swiper-button-prev {
-      padding: 100px 50px 100px 15px;
-    }
-    .swiper-button-next {
-      padding: 100px 15px 100px 50px;
     }
     .swiper-button-disabled {
       pointer-events: unset;

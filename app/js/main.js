@@ -58,53 +58,13 @@ $(function () {
 
   const animItems = document.querySelectorAll(".animation");
 
-  function someAnimation(e, anim) {
-    var items = e.querySelectorAll('.some-anim');
-    switch (anim) {
-      // case 'hover-anim':
-      //   var time = 100;
-      //   for (let i = 0; i < items.length; i++) {
-      //     setTimeout(() => {
-      //       items[i].classList.add('hoverAnim');
-      //       setTimeout(() => items[i].classList.remove('hoverAnim'), time);
-      //     }, (i + 1) * 400);
-      //     time += 100;
-      //   }
-      //   break;
-      case 'list-anim':
-        for (let i = 0; i < items.length; i++) {
-          setTimeout(() => {
-            items[i].classList.add('list-anim');
-          }, (i + 1) * 250);
-        }
-        break;
-    }
-  }
-
-  function animateStart(e) {
-    if (e.dataset.anim) {
-      switch (e.dataset.anim) {
-        case 'list-anim':
-          someAnimation(e, 'list-anim');
-          break;
-        // case 'hoverAnim':
-        //   someAnimation(e, 'hover-anim');
-        //   break;
-        default:
-          e.classList.add(e.dataset.anim);
-      }
-    }
-    if (e.dataset.extraanim) e.classList.add(e.dataset.extraanim);
-
-  }
-
   const animOptions = {
     threshold: 0,
     rootMargin: "10000px 0px -60px 0px",
   };
 
   const animObserver = new IntersectionObserver((entries, animObserver) => {
-    entries.forEach((entry) => {
+    entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       else {
         animateStart(entry.target);
@@ -113,26 +73,38 @@ $(function () {
     });
   }, animOptions);
 
-  animItems.forEach((anim) => {
-    animObserver.observe(anim);
-  });
+  animItems.forEach(anim => animObserver.observe(anim));
 
+  function animateStart(e) {
+    if (e.dataset.anim) {
+      switch (e.dataset.anim) {
+        case 'list-anim':
+          let items = e.querySelectorAll('.some-anim');
+          for (let i = 0; i < items.length; i++)
+            setTimeout(() => items[i].classList.add('list-anim'), (i + 1) * 250);
+          break;
+        default:
+          e.classList.add(e.dataset.anim);
+      }
+    }
+    if (e.dataset.extraanim) e.classList.add(e.dataset.extraanim);
+  }
 
+  // image effect when scrolling
   const scrollImages = document.querySelectorAll('.scroll-image');
 
   if (scrollImages.length > 0) {
     window.addEventListener('scroll', () => {
-      scrollImages.forEach((image) => {
+      for (let image of scrollImages) {
         const imageHeight = image.offsetHeight;
         const imageOffset = image.offsetTop;
-        var imageX = imageOffset - imageHeight;
+        const imageX = imageOffset - imageHeight;
 
         if (scrollY > imageX) {
-          var imageScrolled = scrollY - imageX;
-          var backgroundPosition = imageScrolled * 0.02;
+          const backgroundPosition = (scrollY - imageX) * 0.02; // pos = image scrolled * coeff
           image.style.backgroundPosition = `${backgroundPosition}%`;
         }
-      });
+      }
     });
   }
 });
