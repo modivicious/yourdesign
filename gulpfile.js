@@ -50,10 +50,7 @@ function images() {
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
         imagemin.mozjpeg({ quality: 75, progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-        }),
+        imagemin.optipng({ optimizationLevel: 5 })
       ])
     )
     .pipe(dest("dist/images"));

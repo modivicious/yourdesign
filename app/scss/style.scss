@@ -708,6 +708,12 @@
     display: block;
     width: 100%;
   }
+  .error{
+    border: 1px solid #ea0000;
+    &::placeholder{
+      color: #ea0000;
+    }
+  }
 }
 
 //----------- footer -----------
