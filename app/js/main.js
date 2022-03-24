@@ -107,38 +107,38 @@ $(function () {
       }
     });
   }
-});
 
-// form validation
-const form = document.querySelector(".consult__form");
-const formInputs = [...document.querySelectorAll(".js-validate")];
+  // form validation
+  const form = document.querySelector(".consult__form");
+  const formInputs = [...document.querySelectorAll(".js-validate")];
 
-for (let input of formInputs) {
-  input.onblur = function () {
-    emptyCheck(this);
-  };
-  input.oninput = function () {
-    if (this.value)
-      this.classList.remove("error");
-  };
-}
-
-form.onsubmit = function () {
-  let flag = false;
   for (let input of formInputs) {
-    emptyCheck(input);
-    if (input.classList.contains("error"))
-      flag = true;
+    input.onblur = function () {
+      emptyCheck(this);
+    };
+    input.oninput = function () {
+      if (this.value)
+        this.classList.remove("error");
+    };
   }
-  if (flag)
-    return false;
-};
 
-const emptyCheck = elem => {
-  if (!elem.value) {
-    elem.classList.add("error");
-    elem.placeholder = "Поле не заполнено";
+  form.onsubmit = function () {
+    let flag = false;
+    for (let input of formInputs) {
+      emptyCheck(input);
+      if (input.classList.contains("error"))
+        flag = true;
+    }
+    if (flag)
+      return false;
+  };
+
+  const emptyCheck = elem => {
+    if (!elem.value) {
+      elem.classList.add("error");
+      elem.placeholder = "Поле не заполнено";
+    }
+    else
+      elem.classList.remove("error");
   }
-  else
-    elem.classList.remove("error");
-}
+});
