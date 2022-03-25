@@ -80,14 +80,14 @@
       display: flex;
       &.menu__btn--active {
         span {
-          transform: translateX(-15px);
+          transform: translate3d(-15px, 0, 0);
           background-color: transparent;
         }
         &::before {
-          transform: rotate(-45deg) translate(-9px, 9px);
+          transform: rotate(-45deg) translate3d(-9px, 9px, 0);
         }
         &::after {
-          transform: rotate(45deg) translate(-9px, -9px);
+          transform: rotate(45deg) translate3d(-9px, -9px, 0);
         }
       }
     }
