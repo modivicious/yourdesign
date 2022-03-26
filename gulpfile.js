@@ -35,7 +35,7 @@ function styles() {
 }
 
 function scripts() {
-  return src(["node_modules/jquery/dist/jquery.js",
+  return src([
     "node_modules/swiper/dist/js/swiper.js",
     "app/js/main.js"])
     .pipe(concat("main.min.js"))

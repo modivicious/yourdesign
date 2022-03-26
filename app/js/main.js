@@ -1,6 +1,4 @@
-$(function () {
-  const screenWidth = window.screen.width;
-
+(function () {
   new Swiper(".recent__slider", {
     autoHeight: false,
     slidesPerView: 3,
@@ -40,22 +38,22 @@ $(function () {
     },
   });
 
-  $('.search__btn').on('click', function () {
-    if (screenWidth > 1200)
-      $('.search__input').animate({ width: 'toggle', paddingLeft: 'toggle', paddingRight: 'toggle' }, 500);
-  });
+  // menu toggle
+  const menuList = document.querySelector(".menu__list");
+  const menuOverlay = document.querySelector(".menu__overlay");
+  const menuBtn = document.querySelector(".menu__btn");
 
   function toggleMenu() {
-    $(".menu__list").toggleClass("menu__list--active");
-    $(".menu__overlay").toggleClass("menu__overlay--active");
-    $(".menu__btn").toggleClass("menu__btn--active");
-    $("body").toggleClass("hide-overflow");
+    menuList.classList.toggle("menu__list--active");
+    menuOverlay.classList.toggle("menu__overlay--active");
+    menuBtn.classList.toggle("menu__btn--active");
+    document.body.classList.toggle("hide-overflow");
   }
 
-  $(".menu__btn").on("click", () => toggleMenu());
-  $(".menu__overlay").on("click", () => toggleMenu());
+  menuBtn.addEventListener("click", toggleMenu);
+  menuOverlay.addEventListener("click", toggleMenu);
 
-
+  // scroll animation
   const animItems = document.querySelectorAll(".animation");
 
   const animOptions = {
@@ -129,8 +127,7 @@ $(function () {
       if (input.classList.contains("error"))
         flag = true;
     }
-    if (flag)
-      return false;
+    if (flag) return false;
   };
 
   const emptyCheck = elem => {
@@ -138,7 +135,6 @@ $(function () {
       elem.classList.add("error");
       elem.placeholder = "Поле не заполнено";
     }
-    else
-      elem.classList.remove("error");
+    else elem.classList.remove("error");
   }
-});
+})()
