@@ -68,9 +68,10 @@
     background-color: $dark;
   }
   .intro {
-    min-height: 100vh;
+    min-height: unset;
     &__inner {
       min-height: 100vh;
+      min-height: -webkit-fill-available;
       display: grid;
       align-items: center;
     }

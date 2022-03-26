@@ -3,6 +3,10 @@ body {
   height: 100%;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   display: flex;
   flex-direction: column;
